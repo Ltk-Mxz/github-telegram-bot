@@ -8,7 +8,7 @@ const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const bot = new TelegramBot(TELEGRAM_TOKEN, { polling: true });
 const octokit = new Octokit({ auth: GITHUB_TOKEN });
 
-bot.onText(/\/createrepo (.+) (public|private)/, async (msg, match) => {
+bot.onText(/\/repo (.+) (pu|pr)/, async (msg, match) => {
   const chatId = msg.chat.id;
   const repoName = match[1];
   const visibility = match[2];
@@ -25,5 +25,5 @@ bot.onText(/\/createrepo (.+) (public|private)/, async (msg, match) => {
 });
 
 bot.onText(/\/start/, (msg) => {
-  bot.sendMessage(msg.chat.id, "Bienvenue ! Utilisez /createrepo <nom> <public|private> pour créer un dépôt GitHub.");
+  bot.sendMessage(msg.chat.id, "Bienvenue ! Utilisez /repo <nom> <pu|pr> pour créer un dépôt GitHub.");
 });
