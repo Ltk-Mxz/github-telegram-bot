@@ -1,5 +1,6 @@
 module.exports = (bot, octokit) => {
   bot.onText(/\/listcollab (.+)/, async (msg, match) => {
+    console.log(`[BOT] /listcollab command from ${msg.from.username || msg.from.id}:`, match[1]);
     const chatId = msg.chat.id;
     const repoName = match[1];
     try {

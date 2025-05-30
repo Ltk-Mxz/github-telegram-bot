@@ -26,6 +26,7 @@ module.exports = (bot, octokit) => {
   const userReposCache = {};
 
   bot.onText(/\/listrepos/, async (msg) => {
+    console.log(`[BOT] /listrepos command from ${msg.from.username || msg.from.id}`);
     const chatId = msg.chat.id;
     try {
       // Pagination GitHub pour tout récupérer

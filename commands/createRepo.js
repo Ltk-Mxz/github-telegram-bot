@@ -1,5 +1,6 @@
 module.exports = (bot, octokit) => {
   bot.onText(/\/createrepo (.+) (public|private)/, async (msg, match) => {
+    console.log(`[BOT] /createrepo command from ${msg.from.username || msg.from.id}:`, match[1], match[2]);
     const chatId = msg.chat.id;
     const repoName = match[1];
     const visibility = match[2];

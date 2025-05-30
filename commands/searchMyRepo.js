@@ -1,5 +1,6 @@
 module.exports = (bot, octokit) => {
   bot.onText(/\/searchmyrepo (.+)/, async (msg, match) => {
+    console.log(`[BOT] /searchmyrepo command from ${msg.from.username || msg.from.id}:`, match[1]);
     const chatId = msg.chat.id;
     const query = match[1].toLowerCase();
     try {
