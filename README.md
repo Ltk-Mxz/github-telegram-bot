@@ -130,4 +130,4 @@ This bot was created by [Ltk-Mxz](https://github.com/Ltk-Mxz).
 
 ## Contact
 
-For any questions or issues, please open an issue on the GitHub repository or contact [me](mailto:EMAIL](mailto:EMAIL).
+For any questions or issues, please open an issue on the GitHub repository or contact [me](mailto:a96.paul96@gmal.com).
