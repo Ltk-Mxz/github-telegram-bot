@@ -25,3 +25,13 @@ fs.readdirSync(commandsPath).forEach(file => {
 bot.onText(/\/start/, (msg) => {
   bot.sendMessage(msg.chat.id, "Bienvenue ! Utilisez /help pour voir les commandes disponibles.");
 });
+
+// Commande /help
+bot.onText(/\/help/, (msg) => {
+  const helpMessage = `
+Voici les commandes disponibles :
+/start - Bienvenue dans le bot Github ! Utilisez cette commande pour démarrer.
+/help - Affiche cette aide.
+`;
+  bot.sendMessage(msg.chat.id, helpMessage);
+});
