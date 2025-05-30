@@ -5,7 +5,7 @@ A Telegram bot to easily manage your GitHub repositories.
 ## Installation
 
 ```bash
-git clone <repo>
+git clone github.com/Ltk-Mxz/github-telegram-bot.git
 cd github-telegram-bot
 npm install
 cp .env.example .env
@@ -94,7 +94,6 @@ Create a `.env` file in the root directory with the following variables:
 ```env
 TELEGRAM_BOT_TOKEN=your_telegram_bot_token
 GITHUB_TOKEN=your_github_token
-GITHUB_USERNAME=your_github_username
 ```
 
 ## Requirements
@@ -110,7 +109,7 @@ GITHUB_USERNAME=your_github_username
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License
 
 ## Contributing
 
@@ -130,4 +129,4 @@ This bot was created by [Ltk-Mxz](https://github.com/Ltk-Mxz).
 
 ## Contact
 
-For any questions or issues, please open an issue on the GitHub repository or contact [me](mailto:a96.paul96@gmal.com).
+For any questions or issues, please open an issue on the GitHub repository or contact me on email <a96.paul96@gmail.com>.

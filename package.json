@@ -2,6 +2,10 @@
   "name": "github-telegram-bot",
   "version": "1.0.0",
   "main": "bot.js",
+  "author": {
+    "name": "Ltk-Mxz",
+    "email": "a96.paul96@gmail.com"
+  },
   "scripts": {
     "start": "node bot.js",
     "dev": "nodemon bot.js"
