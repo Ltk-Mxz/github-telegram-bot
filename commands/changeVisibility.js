@@ -12,7 +12,14 @@ module.exports = (bot, octokit) => {
       });
       bot.sendMessage(chatId, `✅ Visibilité changée pour ${repoName} : ${visibility}`);
     } catch (e) {
-      bot.sendMessage(chatId, `Erreur: ${e.message}`);
+      // Gestion d'erreur plus explicite pour les droits ou repo inexistant
+      if (e.status === 404) {
+        bot.sendMessage(chatId, `Erreur : dépôt introuvable ou vous n'avez pas les droits.`);
+      } else if (e.status === 422) {
+        bot.sendMessage(chatId, `Erreur : la visibilité est déjà "${visibility}".`);
+      } else {
+        bot.sendMessage(chatId, `Erreur: ${e.message}`);
+      }
     }
   });
 };

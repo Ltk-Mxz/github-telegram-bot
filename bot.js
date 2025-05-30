@@ -35,3 +35,32 @@ Voici les commandes disponibles :
 `;
   bot.sendMessage(msg.chat.id, helpMessage);
 });
+
+// Gestion des erreurs
+bot.on('polling_error', (error) => {
+  console.error(`Polling error: ${error.code} - ${error.message}`);
+});
+
+// Gestion des erreurs d'API GitHub
+octokit.hook.error('request', (error) => {
+  console.error(`GitHub API error: ${error.message}`);
+});
+
+// Gestion des erreurs de commande
+bot.on('message', (msg) => {
+  if (msg.text && !msg.text.startsWith('/')) {
+    bot.sendMessage(msg.chat.id, "Commande inconnue. Utilisez /help pour voir les commandes disponibles.");
+  }
+});
+
+// Gestion des erreurs de connexion
+bot.on('webhook_error', (error) => {
+  console.error(`Webhook error: ${error.code} - ${error.message}`);
+});
+
+// Gestion des erreurs de connexion à GitHub
+octokit.hook.error('request', (error) => {
+  console.error(`GitHub connection error: ${error.message}`);
+});
+
+console.log('Bot is running', new Date().toLocaleString());

@@ -2,6 +2,7 @@ module.exports = (bot, octokit) => {
   bot.onText(/\/help/, (msg) => {
     const helpText = `
 <b>Commandes disponibles :</b>
+/createrepo &lt;nom&gt; &lt;public|private&gt; - Créer un dépôt
 /listrepos - Lister vos dépôts
 /deleterepo &lt;repo&gt; - Supprimer un dépôt
 /addcollab &lt;repo&gt; &lt;utilisateur&gt; - Ajouter un collaborateur
@@ -14,6 +15,8 @@ module.exports = (bot, octokit) => {
 /createbranch &lt;repo&gt; &lt;branche&gt; &lt;from_branche&gt; - Créer une branche
 /lastcommits &lt;repo&gt; &lt;branch&gt; [n] - Voir les derniers commits d'une branche
 /setwebhook &lt;repo&gt; &lt;url&gt; - Ajouter un webhook à un dépôt
+/searchrepo &lt;mot-clé&gt; - Rechercher des dépôts publics sur GitHub
+/searchmyrepo &lt;mot-clé&gt; - Rechercher dans vos propres dépôts
     `;
     bot.sendMessage(msg.chat.id, helpText, { parse_mode: 'HTML' });
   });
